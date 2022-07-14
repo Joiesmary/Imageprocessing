@@ -61,3 +61,20 @@ program2 :
       
 ![image](https://user-images.githubusercontent.com/19484531/178720950-32826468-7c8c-4615-90ea-1a903e2436b0.png)
 
+
+      program6: 
+
+      import cv2
+      import matplotlib.pyplot as plt
+      import numpy as np
+      img=cv2.imread('butterfly.jpg')
+      plt.imshow(img)
+      plt.show()
+      img=cv2.cvtColor(img,cv2.COLOR_RGB2BGR)
+      plt.imshow(img)
+      plt.show()
+      img=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+      plt.imshow(img)
+      plt.show()
+   
+ ![image](https://user-images.githubusercontent.com/19484531/178945094-2a315d26-032e-463d-b797-44cafc413585.png)
