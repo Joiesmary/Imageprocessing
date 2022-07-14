@@ -262,31 +262,224 @@ program 12:
 ![image](https://user-images.githubusercontent.com/19484531/178967844-db289dd0-5827-4f83-8752-196e27b40f75.png)
 
 
-   program 15:
+      program 15:
    
-   import cv2
-   import matplotlib.image as mping
-   import matplotlib.pyplot as plt
-   image1=mping.imread('bird1.jpg')
-   image2=mping.imread('bird1.jpg')
-   ax=plt.subplots(figsize=(15,10))
-   bitwiseAnd= cv2.bitwise_and(image1, image2) 
-   bitwiseor= cv2.bitwise_or(image1, image2)
-   bitwiseXor=cv2.bitwise_xor (image1,image2) 
-   bitwiseNot_img1= cv2.bitwise_not(image1)
-   #bitwiseNot_img1= cv2.bitwise_not(image2)
-   plt.subplot(151)
-   plt.imshow(bitwiseAnd)
-   plt.subplot(152)
-   plt.imshow(bitwiseor)
-   plt.subplot(153)
-   plt.imshow(bitwiseXor)
-   plt.subplot(154)
-   plt.imshow(bitwiseNot_img1) 
-   #plt.subplot(155)
-   #plt.imshow(bitwiseNot_img2)
-   cv2.waitKey(0)
+      import cv2
+      import matplotlib.image as mping
+       import matplotlib.pyplot as plt
+      image1=mping.imread('bird1.jpg')
+      image2=mping.imread('bird1.jpg')
+      ax=plt.subplots(figsize=(15,10))
+      bitwiseAnd= cv2.bitwise_and(image1, image2) 
+      bitwiseor= cv2.bitwise_or(image1, image2)
+      bitwiseXor=cv2.bitwise_xor (image1,image2) 
+      bitwiseNot_img1= cv2.bitwise_not(image1)
+      #bitwiseNot_img1= cv2.bitwise_not(image2)
+      plt.subplot(151)
+      plt.imshow(bitwiseAnd)
+      plt.subplot(152)
+      plt.imshow(bitwiseor)
+      plt.subplot(153)
+      plt.imshow(bitwiseXor)
+      plt.subplot(154)
+      plt.imshow(bitwiseNot_img1) 
+     #plt.subplot(155)
+     #plt.imshow(bitwiseNot_img2)
+      cv2.waitKey(0)
    
 
 ![image](https://user-images.githubusercontent.com/19484531/178968074-2f45fc80-38ca-4cac-b888-458a1e7a677a.png)
+
+  
+      program 16: 
+    
+       import cv2
+       import numpy as np
+       image=cv2.imread('rose7.jpg')
+       cv2.imshow('original Image',image)
+       cv2.waitKey(0)
+       Gaussian=cv2.GaussianBlur(image,(7,7),0)
+       cv2.imshow('gaussian Bluring',Gaussian)
+       cv2.waitKey(0)
+       median=cv2.medianBlur(image,5)
+       cv2.imshow('Median Bluring',median)
+       cv2.waitKey(0)
+       bilateral=cv2.bilateralFilter(image,9,75,75)
+       cv2.imshow('Bilateral Bluring',bilateral)
+       cv2.waitKey(0)
+       cv2.distroyAllWindows()
+
+![image](https://user-images.githubusercontent.com/19484531/178968398-250ea35f-e271-4617-8f97-745fac306ec2.png)
+![image](https://user-images.githubusercontent.com/19484531/178968450-56d7abb5-48c9-4ed8-bf5d-8931373df326.png)
+![image](https://user-images.githubusercontent.com/19484531/178968525-6e297678-73af-49bd-b03c-d6a19041d9cd.png)
+![image](https://user-images.githubusercontent.com/19484531/178968575-aad10e47-cb05-4344-b005-0885365b1368.png)
+
+      
+          program 17:
+          
+          from PIL import Image
+          from PIL import ImageEnhance
+          image=Image.open('plant2.jpg')
+          image.show()
+          enh_bri=ImageEnhance.Brightness(image)
+          brightness=1.5
+          image_brightened=enh_bri.enhance(brightness)
+          image_brightened.show()
+         enh_col=ImageEnhance.Color(image)
+         color=1.5
+         image_colored=enh_col.enhance(color)
+          image_colored.show()
+         enh_con=ImageEnhance.Contrast(image)
+         contrast=1.5
+         image_contrasted=enh_con.enhance(contrast)
+         image_contrasted.show()
+          enh_sha=ImageEnhance.Sharpness(image)
+          sharpness=3.0
+          image_sharpness=enh_sha.enhance(sharpness)
+           image_sharpness.show()
+           
+           
+ ![image](https://user-images.githubusercontent.com/19484531/178968989-0ebff431-a2c1-4557-b1b1-8b3c807a0309.png)
+ 
+ 
+       program 18:
+       
+       import cv2
+       import numpy as np
+       from matplotlib import pyplot as plt
+       from PIL import Image,ImageEnhance
+       img=cv2.imread('butterfly.jpg',0)
+       ax=plt.subplots(figsize=(20,10))
+       kernel=np.ones((5,5),np.uint8)
+       opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)
+       closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)
+       erosion=cv2.erode(img,kernel,iterations=1)
+       dilation=cv2.dilate(img,kernel,iterations=1)
+       gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)
+        plt.subplot(151)
+        plt.imshow(opening)
+         plt.subplot(152)
+        plt.imshow(closing)
+        plt.subplot(153)
+        plt.imshow(erosion)
+        plt.subplot(154)
+      plt.imshow(dilation)
+      plt.subplot(155)
+       plt.imshow(gradient)
+       cv2.waitKey(0)
+       
+
+ ![image](https://user-images.githubusercontent.com/19484531/178969280-d2b42e03-62f5-4c57-abde-b66bff4dc179.png)
+
+
+
+       program 19:
+       import cv2
+       OriginalImg=cv2.imread('butterfly.jpg')
+       GrayImg=cv2.imread('butterfly.jpg',0)
+       isSaved=cv2.imwrite('D:/i.jpg',GrayImg)
+       cv2.imshow('Display original image',OriginalImg)
+       cv2.imshow('Display gray scal image',GrayImg)
+       cv2.waitKey(0)
+       cv2.destroyAllWindows()
+       if isSaved:
+            print('The image is successfully Saved')
+            
+            Out put:
+          The image is successfully Saved
+          
+          
+  ![image](https://user-images.githubusercontent.com/19484531/178969714-52b80b8d-e945-4bea-9207-44f5af297203.png)
+
+![image](https://user-images.githubusercontent.com/19484531/178969827-e5a62560-b466-45af-bf3e-9533173b65c0.png)
+
+    
+       program 20:
+    
+       import cv2
+       import numpy as np
+       from matplotlib import pyplot as plt
+       image=cv2.imread('dog3.jpg',0)
+       x,y=image.shape
+       z=np.zeros((x,y))
+       for i in range(0,x):
+          for j in range(0,y):
+              if(image[i][j]>50 and image[i][j]<150):
+                 z[i][j]=255
+              else:
+                 z[i][j]=image[i][j]
+        equ=np.hstack((image,z))
+        plt.title('Graylevel slicing with backgroug')
+        plt.imshow(equ,'gray')
+        plt.show()
+
+
+![image](https://user-images.githubusercontent.com/19484531/178970074-b6b27003-3715-4a22-886c-f3a2efe1e0dc.png)
+
+     
+      program 21:
+      
+      import cv2
+      import numpy as np
+      from matplotlib import pyplot as plt
+      image=cv2.imread('dog3.jpg',0)
+      x,y=image.shape
+      z=np.zeros((x,y))
+      for i in range(0,x):
+          for j in range(0,y):
+               if(image[i][j]>50 and image[i][j]<150):
+                   z[i][j]=255
+               else:
+                   z[i][j]=0
+      equ=np.hstack((image,z))
+      plt.title('Graylevel slicing with out background')
+      plt.imshow(equ,'gray')
+       plt.show()
+       
+  ![image](https://user-images.githubusercontent.com/19484531/178970255-09b2f243-52af-4214-be85-af997eccc554.png)
+  
+  
+  
+  
+       program 21:
+       
+         import numpy as np
+         import cv2 as cv
+         from matplotlib import pyplot as plt
+         img = cv.imread('rose3.jpg')
+         plt.imshow(img)
+         plt.show()
+         img = cv.imread('rose3.jpg',0)
+         plt.hist(img.ravel(),256,[0,256]);
+         plt.show()
+         
+  
+
+![image](https://user-images.githubusercontent.com/19484531/178970649-0e2c0045-44f6-4096-802c-610956b2c45e.png)
+
+          from skimage import io
+          import matplotlib.pyplot as plt
+          img = cv.imread('rose3.jpg')
+           plt.imshow(img)
+          plt.show()
+         ax = plt.hist(img.ravel(), bins = 256)
+         _ = plt.xlabel('Intensity Value')
+         _ = plt.ylabel('Count') 
+         plt.show()
+         
+  ![image](https://user-images.githubusercontent.com/19484531/178970783-0026ddf8-a448-4ec8-8cb1-3533c511521f.png)
+  
+           from skimage import io
+           import matplotlib.pyplot as plt
+           img = io.imread('rose3.jpg')
+           plt.imshow(img)
+           plt.show()
+           image = io.imread('rose3.jpg')
+           ax = plt.hist(image.ravel(), bins = 256)
+           plt.show()
+           
+ ![image](https://user-images.githubusercontent.com/19484531/178970904-254c7206-860a-4a06-ac34-7c298db2056d.png)
+
+
+
 
