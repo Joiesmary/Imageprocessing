@@ -49,7 +49,10 @@ program2 :
           (0, 0, 255)
           
           
-          program5:
+      program5:
+          
+          
+          
           from PIL import Image
           img=Image.new('RGB',(200,400),(255,255,0))
          img.show()
@@ -98,7 +101,10 @@ program2 :
       size: (205, 245)
       Width: 205
       
-      program 8:
+      
+   program 8:
+      
+      
       import cv2
       img=cv2.imread('dog3.jpg')
       cv2.imshow("RGB",img)
@@ -130,7 +136,11 @@ program2 :
      output:
      original image length width (195, 259, 3)
      
+     
+     
+     
      program 10:
+     
      from skimage import io
       import matplotlib.pyplot as plt
       url='https://images.unsplash.com/photo-1573692822343-a4c703f8043c?ixlib=rb-     1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9uYXJjaCUyMGJ1dHRlcmZseXxlbnwwfHwwfHw%3D&w=1000&q=80'
@@ -441,7 +451,7 @@ program 12:
   
   
   
-       program 21:
+       program 22:
        
          import numpy as np
          import cv2 as cv
