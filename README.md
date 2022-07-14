@@ -78,3 +78,68 @@ program2 :
       plt.show()
    
  ![image](https://user-images.githubusercontent.com/19484531/178945094-2a315d26-032e-463d-b797-44cafc413585.png)
+
+    program 7:
+    
+      from PIL import Image
+     image=Image.open('rose3.jpg')
+      print("File Name:",image.filename)
+      print("Fromat:",image.format)
+      print("Mode:",image.mode)
+      print("size:",image.size)
+      print("Width:",image.width)
+      print("Height:",image.height)
+      image.close()
+      
+      Out put: 
+      File Name: rose3.jpg
+      Fromat: JPEG
+      Mode: RGB
+      size: (205, 245)
+      Width: 205
+      
+      program 8:
+      import cv2
+      img=cv2.imread('dog3.jpg')
+      cv2.imshow("RGB",img)
+      cv2.waitKey(0)
+      img=cv2.imread('dog3.jpg',0)
+      cv2.imshow("Gray",img)
+      cv2.waitKey(0)
+      ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+      cv2.imshow("Binary",bw_img)
+      cv2.waitKey(0)
+      cv2.destroyAllWindows()
+      
+ ![image](https://user-images.githubusercontent.com/19484531/178965223-01d750cd-d0ea-404b-bb4a-dae8b83b08e2.png)
+ ![image](https://user-images.githubusercontent.com/19484531/178965346-58b2749f-2b98-47f8-a105-916418e35898.png)
+![image](https://user-images.githubusercontent.com/19484531/178965411-082a14d2-c50d-494d-86b0-ddcc1c69209a.png)
+
+
+     program 9:
+     import cv2
+     img=cv2.imread('plant2.jpg')
+     print('original image length width',img.shape)
+     cv2.imshow('Original image',img)
+     cv2.waitKey(0)
+     imgresize=cv2.resize(img,(150,160))
+     cv2.imshow('Resize image',imgresize)
+     print('Resized image length width',imgresize.shape)
+     cv2.waitKey(0)
+     
+     output:
+     original image length width (195, 259, 3)
+     
+     program 10:
+     from skimage import io
+      import matplotlib.pyplot as plt
+      url='https://images.unsplash.com/photo-1573692822343-a4c703f8043c?ixlib=rb-     1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9uYXJjaCUyMGJ1dHRlcmZseXxlbnwwfHwwfHw%3D&w=1000&q=80'
+     image=io.imread(url)
+     plt.imshow(image)
+     plt.show()
+     
+ ![image](https://user-images.githubusercontent.com/19484531/178965792-bec6d5ef-f372-4046-b96a-e60b65b60a24.png)
+
+
+
+Height: 245
