@@ -143,3 +143,150 @@ program2 :
 
 
 Height: 245
+
+
+
+     program 11: 
+    import cv2
+    import matplotlib.image as mping
+    import matplotlib.pyplot as plt
+    img=mping.imread('rose1.jpg')
+    plt.imshow(img)
+    plt.show()
+    
+    
+![image](https://user-images.githubusercontent.com/19484531/178966069-f68729e8-2d58-4a66-910d-ea5e54b97508.png)
+
+    hsv_img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
+    light_orange=(1,190,200)
+    dark_orange=(18,255,255)
+    mask=cv2.inRange(hsv_img,light_orange,dark_orange)
+    result=cv2.bitwise_and(img,img,mask=mask)
+    plt.subplot(1,2,1)
+    plt.imshow(mask,cmap="gray")
+    plt.subplot(1,2,2)
+    plt.imshow(result)
+    plt.show()
+![image](https://user-images.githubusercontent.com/19484531/178966232-4503e02c-d3e7-46ca-9057-b7e2ff02e7f7.png)
+
+    light_white=(0,0,200)
+    dark_white=(142,60,255)
+    mask_white=cv2.inRange(hsv_img,light_white,dark_white)
+    result_white=cv2.bitwise_and(img,img,mask=mask_white)
+    plt.subplot(1,2,1)
+    plt.imshow(mask_white,cmap="gray")
+    plt.subplot(1,2,2)
+    plt.imshow(result_white)
+    plt.show()
+  
+![image](https://user-images.githubusercontent.com/19484531/178966395-c5663b82-dfa1-4eff-adf9-0343f9a4748b.png)
+  
+    final_mask=mask+mask_white
+    final_result=cv2.bitwise_and(img,img,mask+final_mask)
+    plt.subplot(1,2,1)
+    plt.imshow(final_mask,cmap="gray")
+    plt.subplot(1,2,2)
+    plt.imshow(final_result)
+    plt.show()
+    
+![image](https://user-images.githubusercontent.com/19484531/178966541-7874a799-2f84-43d8-9493-a4545284094a.png)
+
+    blur=cv2.GaussianBlur(final_result,(7,7),0)
+    plt.imshow(blur)
+    plt.show()
+    
+![image](https://user-images.githubusercontent.com/19484531/178966622-77940c15-413c-4b9c-87e2-a9adc4524f9d.png)
+
+
+program 12:
+
+      import cv2
+      import matplotlib.image as mping
+      import matplotlib.pyplot as plt
+      img1=cv2.imread('butterfly.jpg')
+      img2=cv2.imread('butterfly.jpg')
+      fimg1=img1+img2
+      plt.imshow(fimg1)
+      plt.show()
+      cv2.imwrite('output.jpg',fimg1)
+      fimg2=img1-img2
+      plt.imshow(fimg2)
+      plt.show()
+      cv2.imwrite('output.jpg',fimg2)
+     fimg3=img1*img2
+     plt.imshow(fimg3)
+     plt.show()
+     cv2.imwrite('output.jpg',fimg3)
+    fimg4=img1/img2
+    plt.imshow(fimg4)
+    plt.show()
+    cv2.imwrite('output.jpg',fimg4)
+ ![image](https://user-images.githubusercontent.com/19484531/178966985-180e1518-620b-409a-b2f3-ba3f18bafce4.png)
+ 
+ ![image](https://user-images.githubusercontent.com/19484531/178967089-63d5f0a0-1fdb-4a39-bc7b-4fbb71ede823.png)
+
+
+    program 13:
+    
+    import cv2
+    img=cv2.imread("D:\i.jpg")
+    gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)
+    hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)
+    yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
+    cv2.imshow("Gray image",gray)
+    cv2.imshow("Hsv image",hsv)
+    cv2.imshow("Lab image",lab)
+    cv2.imshow("Hls image",hls)
+    cv2.imshow("Yuv image",yuv)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+ ![image](https://user-images.githubusercontent.com/19484531/178967627-481e7c6b-6a47-4055-aaee-94581610abdb.png)
+
+
+     program 14: 
+     
+     import cv2 as c
+     import numpy as np
+     from PIL import Image
+     array=np.zeros([100,200,3],dtype=np.uint8)
+     array[:,:100]=[255,130,0]
+     array[:,100:]=[0,0,255]
+    img=Image.fromarray(array)
+    img.save('image1.png')
+    img.show()
+    c.waitKey(0)
+
+![image](https://user-images.githubusercontent.com/19484531/178967844-db289dd0-5827-4f83-8752-196e27b40f75.png)
+
+
+   program 15:
+   
+   import cv2
+   import matplotlib.image as mping
+   import matplotlib.pyplot as plt
+   image1=mping.imread('bird1.jpg')
+   image2=mping.imread('bird1.jpg')
+   ax=plt.subplots(figsize=(15,10))
+   bitwiseAnd= cv2.bitwise_and(image1, image2) 
+   bitwiseor= cv2.bitwise_or(image1, image2)
+   bitwiseXor=cv2.bitwise_xor (image1,image2) 
+   bitwiseNot_img1= cv2.bitwise_not(image1)
+   #bitwiseNot_img1= cv2.bitwise_not(image2)
+   plt.subplot(151)
+   plt.imshow(bitwiseAnd)
+   plt.subplot(152)
+   plt.imshow(bitwiseor)
+   plt.subplot(153)
+   plt.imshow(bitwiseXor)
+   plt.subplot(154)
+   plt.imshow(bitwiseNot_img1) 
+   #plt.subplot(155)
+   #plt.imshow(bitwiseNot_img2)
+   cv2.waitKey(0)
+   
+
+![image](https://user-images.githubusercontent.com/19484531/178968074-2f45fc80-38ca-4cac-b888-458a1e7a677a.png)
+
