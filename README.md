@@ -493,3 +493,70 @@ program 12:
 
 
 
+
+      program 23:
+
+
+        %matplotlib inline
+        import imageio
+        import matplotlib.pyplot as plt
+        import warnings
+        import matplotlib.cbook
+        warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
+        pic=imageio.imread("butterfly.jpg")
+        plt.figure(figsize=(6,6))
+        plt.imshow(pic);
+        plt.axis('off');
+        
+![image](https://user-images.githubusercontent.com/19484531/179949580-6ebaa4cf-5244-414e-8006-9683069e1037.png)
+
+
+         negative=255-pic
+         plt.figure(figsize=(6,6))
+         plt.imshow(negative);
+         plt.axis('off');
+         
+![image](https://user-images.githubusercontent.com/19484531/179949771-6a577bfe-a1b9-4d36-91ff-1028f3892e2b.png)
+
+
+         %matplotlib inline
+         import imageio
+         import numpy as np
+         import matplotlib.pyplot as plt
+         pic=imageio.imread('butterfly.jpg')
+         gray=lambda rgb:np.dot(rgb[...,:3],[0.299,0.587,0.114])
+         gray=gray(pic)
+         max_=np.max(gray)
+         def log_transform():
+               return(255/np.log(1+max_))*np.log(1+gray)
+         plt.figure(figsize=(5,5))
+         plt.imshow(log_transform(),cmap=plt.get_cmap(name='gray'))
+         plt.axis('off');
+         
+         
+![image](https://user-images.githubusercontent.com/19484531/179949989-0f1fcf30-ffa0-424e-9d44-4ea231698782.png)
+
+
+         import imageio
+         import matplotlib.pyplot as plt
+         pic=imageio.imread('butterfly.jpg')
+         gamma=2.2
+         gamma_correction=((pic/255)**(1/gamma))
+         plt.figure(figsize=(5,5))
+         plt.imshow(gamma_correction)
+         plt.axis('off');
+         
+![image](https://user-images.githubusercontent.com/19484531/179950134-1c5edc9a-d057-4e11-9c9d-77df34fc4907.png)
+
+
+        if we give  ,
+              gamma=5.5
+              
+![image](https://user-images.githubusercontent.com/19484531/179950350-67a80abc-4d96-45bb-90da-3e6b984722d1.png)
+
+
+
+
+        program 24:
+        
+        
