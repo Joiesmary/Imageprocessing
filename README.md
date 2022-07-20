@@ -494,8 +494,13 @@ program 12:
 
 
 
-      program 23:
-
+      program 23:Image Processing Lab Exercise :20/07/2022
+             1. Program to perform basic image data analysis using intensity transformation:
+                  a) Image negative
+                  b) Log transformation
+                  c) Gamma correction
+                  d)
+ 
 
         %matplotlib inline
         import imageio
@@ -557,6 +562,12 @@ program 12:
 
 
 
-        program 24:
+        program 24:2. Program to perform basic image manipulation:
+                   a) Sharpness
+                    b) Flipping
+                   c) Cropping
+                   
+                   
+       
         
         
