@@ -568,6 +568,41 @@ program 12:
                    c) Cropping
                    
                    
-       
+         from PIL import Image
+         from PIL import ImageFilter
+         import matplotlib.pyplot as plt
+         my_image=Image.open('images (3).jpg')
+         sharp=my_image.filter(ImageFilter.SHARPEN)
+         sharp.save('D:/image.sharpen.jpg')
+         sharp.show()
+         plt.imshow(sharp)
+         plt.show()
+         
+ ![image](https://user-images.githubusercontent.com/19484531/179955355-b6c2db2a-8571-4dcb-956c-8ba2d8b3955a.png)
+
         
         
+          import matplotlib.pyplot as plt
+          img=Image.open('images (3).jpg')
+          plt.imshow(img)
+          plt.show()
+          flip=img.transpose(Image.FLIP_LEFT_RIGHT)
+          flip.save('D:/image_flip.jpg')
+          plt.imshow(flip)
+         plt.show()
+         
+         
+ ![image](https://user-images.githubusercontent.com/19484531/179955518-56bb5255-503c-4eec-b9b3-7ee1fb74b676.png)
+
+
+          from PIL import Image
+          import matplotlib.pyplot as plt
+          im=Image.open('images (3).jpg')
+          width,height=im.size
+          im1=im.crop((40,50,200,150))
+          im1.show()
+          plt.imshow(im1)
+          plt.show()
+          
+ ![image](https://user-images.githubusercontent.com/19484531/179955667-ca47ddbf-1852-4332-87b4-ba69ce7a62c3.png)
+
