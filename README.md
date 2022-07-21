@@ -646,12 +646,12 @@ program 12:
 
  
  
-  program 25:
+           program 25:
           from PIL import Image
           import numpy as np
           import matplotlib.pyplot as plt
            w, h = 500, 512
-         data = np.zeros((h, w, 3), dtype=np.uint8)
+          data = np.zeros((h, w, 3), dtype=np.uint8)
 
 
          data[220:320, 220:320] = [255, 255,255]
