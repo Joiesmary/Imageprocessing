@@ -613,3 +613,57 @@ program 12:
           
  ![image](https://user-images.githubusercontent.com/19484531/179955667-ca47ddbf-1852-4332-87b4-ba69ce7a62c3.png)
 
+
+         program 24:
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        arr = np.zeros((256,256,3), dtype=np.uint8)
+        imgsize = arr.shape[:2]
+        innerColor = (255, 255, 255)
+        outerColor = (10,10,10)
+       for y in range(imgsize[1]):
+           for x in range(imgsize[0]):
+             #Find the distance to the center
+                  distanceToCenter = np.sqrt((x - imgsize[0]//2) ** 2 + (y - imgsize[1]//2) ** 2)
+
+        #Make it on a scale from 0 to 1innerColor
+                  distanceToCenter = distanceToCenter / (np.sqrt(2) * imgsize[0]/2)
+
+        #Calculate r, g, and b values
+        r = outerColor[0] * distanceToCenter + innerColor[0] * (1 - distanceToCenter)
+        g = outerColor[1] * distanceToCenter + innerColor[1] * (1 - distanceToCenter)
+        b = outerColor[2] * distanceToCenter + innerColor[2] * (1 - distanceToCenter)
+        # print r, g, b
+        arr[y, x] = (int(r), int(g), int(b))
+
+        plt.imshow(arr, cmap='gray')
+       plt.show()
+       
+       
+ ![image](https://user-images.githubusercontent.com/19484531/180202842-29d37fe4-661c-4711-910d-79b3c7a52af3.png)
+
+ 
+ 
+  program 25:
+          from PIL import Image
+          import numpy as np
+          import matplotlib.pyplot as plt
+           w, h = 500, 512
+         data = np.zeros((h, w, 3), dtype=np.uint8)
+
+
+         data[220:320, 220:320] = [255, 255,255]
+           data[320:420, 320:420] = [180, 180,180]
+          data[0:120, 0:120] = [120, 120,120]
+         data[120:220, 120:220] = [120, 120,120]
+          data[420:512, 420:512] = [255, 255,255]
+        # red patch in upper left
+          img = Image.fromarray(data, 'RGB')
+          img.save('rose7.jpg')
+         img.show()
+          plt.imshow(img)
+       
+       
+ ![image](https://user-images.githubusercontent.com/19484531/180203271-aca00ac0-15ed-420f-9ce7-b6d21cc053e3.png)
