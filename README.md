@@ -704,3 +704,52 @@ program 12:
 
 
  ![image](https://user-images.githubusercontent.com/19484531/181234717-211380c5-e061-4f62-90f6-fb4ffbe5727c.png)
+
+
+      average,standard deviation,minimum and maximum pixel values
+      
+      import imageio
+       import matplotlib.pyplot as plt
+      img=imageio.imread("bird1.jpg")
+      plt.imshow(img)
+      np.average(img)
+      
+ ![image](https://user-images.githubusercontent.com/19484531/181235159-f18b1290-5ed2-4b47-97aa-2dce32059047.png)
+ 
+      from PIL import Image,ImageStat
+     import matplotlib.pyplot as plt
+     im=Image.open('bird1.jpg')
+     img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+     plt.imshow(im)
+     plt.show()
+     stat=ImageStat.Stat(im)
+     print(stat.stddev)
+![image](https://user-images.githubusercontent.com/19484531/181235253-25610edf-0cbb-4608-a81f-82e3230302ae.png)
+
+
+     import imageio
+     import numpy as np
+     import matplotlib.pyplot as plt
+     img=imageio.imread('bird1.jpg' )
+     plt.imshow(img)
+     plt.show()
+     max_channels = np.amax([np.amax(img[:,:,0]), np.amax(img[:,:,1]),np.amax(img[:,:,2])])
+
+     print(max_channels)
+     
+     
+ ![image](https://user-images.githubusercontent.com/19484531/181235362-2cbaf32a-49d9-4b80-b9fa-323d7f78d57a.png)
+
+
+     import imageio
+      import numpy as np
+      import matplotlib.pyplot as plt
+      img=imageio.imread('bird1.jpg' )
+      plt.imshow(img)
+      plt.show()
+      min_channels = np.amin([np.min(img[:,:,0]), np.amin(img[:,:,1]),np.amin(img[:,:,2])])
+
+      print(min_channels)
+      
+      
+ ![image](https://user-images.githubusercontent.com/19484531/181235454-b8178ea8-6c90-4016-8505-b83dfa5d6e0f.png)
