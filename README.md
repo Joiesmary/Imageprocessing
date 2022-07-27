@@ -697,7 +697,10 @@ program 12:
             print(result[i][j], end = " ");
         print("");
  
-# Driver Code
+    # Driver Code
      n = 4;
  
      printPattern(n);
+
+
+ ![image](https://user-images.githubusercontent.com/19484531/181234717-211380c5-e061-4f62-90f6-fb4ffbe5727c.png)
