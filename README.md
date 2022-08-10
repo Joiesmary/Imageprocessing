@@ -274,31 +274,31 @@ program 12:
 
       program 15:
    
-      import cv2
-      import matplotlib.image as mping
-       import matplotlib.pyplot as plt
-      image1=mping.imread('bird1.jpg')
-      image2=mping.imread('bird1.jpg')
-      ax=plt.subplots(figsize=(15,10))
-      bitwiseAnd= cv2.bitwise_and(image1, image2) 
-      bitwiseor= cv2.bitwise_or(image1, image2)
-      bitwiseXor=cv2.bitwise_xor (image1,image2) 
-      bitwiseNot_img1= cv2.bitwise_not(image1)
-      #bitwiseNot_img1= cv2.bitwise_not(image2)
-      plt.subplot(151)
-      plt.imshow(bitwiseAnd)
-      plt.subplot(152)
-      plt.imshow(bitwiseor)
-      plt.subplot(153)
-      plt.imshow(bitwiseXor)
-      plt.subplot(154)
-      plt.imshow(bitwiseNot_img1) 
-     #plt.subplot(155)
-     #plt.imshow(bitwiseNot_img2)
-      cv2.waitKey(0)
+        import cv2
+        import matplotlib.image as mping
+        import matplotlib.pyplot as plt
+        image1=mping.imread('catresize.jpg')
+        image2=mping.imread('dog3.jpg')
+        ax=plt.subplots(figsize=(15,10))
+        bitwiseAnd=cv2.bitwise_and(image1,image2)
+        bitwiseOr=cv2.bitwise_or(image1,image2)
+        bitwiseXor=cv2.bitwise_xor(image1,image2)
+        bitwiseNot_img1= cv2.bitwise_not(image1)
+        bitwiseNot_img2= cv2.bitwise_not(image2)
+        plt.subplot(151)
+        plt.imshow(bitwiseAnd)
+        plt.subplot(152)
+        plt.imshow(bitwiseOr)
+        plt.subplot(153)
+        plt.imshow(bitwiseXor)
+        plt.subplot(154)
+        plt.imshow(bitwiseNot_img1)
+        plt.subplot(155)
+        plt.imshow(bitwiseNot_img2)
+        cv2.waitKey(0)
    
 
-![image](https://user-images.githubusercontent.com/19484531/178968074-2f45fc80-38ca-4cac-b888-458a1e7a677a.png)
+![image](https://user-images.githubusercontent.com/19484531/183875236-acd0a5b3-2f2f-4c4e-9bf9-095740d09a8e.png)
 
   
       program 16: 
