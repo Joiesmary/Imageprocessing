@@ -213,8 +213,8 @@ program 12:
       import cv2
       import matplotlib.image as mping
       import matplotlib.pyplot as plt
-      img1=cv2.imread('butterfly.jpg')
-      img2=cv2.imread('butterfly.jpg')
+      img1=cv2.imread('butterfly.jpg') #img1=cv2.imread('catresize.jpg')
+      img2=cv2.imread('butterfly.jpg')#img2=cv2.imread('dog3.jpg')
       fimg1=img1+img2
       plt.imshow(fimg1)
       plt.show()
@@ -231,9 +231,15 @@ program 12:
     plt.imshow(fimg4)
     plt.show()
     cv2.imwrite('output.jpg',fimg4)
+    
+    output 1:
  ![image](https://user-images.githubusercontent.com/19484531/178966985-180e1518-620b-409a-b2f3-ba3f18bafce4.png)
  
  ![image](https://user-images.githubusercontent.com/19484531/178967089-63d5f0a0-1fdb-4a39-bc7b-4fbb71ede823.png)
+     
+     output 2:
+![image](https://user-images.githubusercontent.com/19484531/183876467-a0118bd0-76db-42d2-88db-b2112d48a62f.png)
+![image](https://user-images.githubusercontent.com/19484531/183876539-70481877-32fd-4303-b0bf-01bbea1b12e8.png)
 
 
     program 13:
