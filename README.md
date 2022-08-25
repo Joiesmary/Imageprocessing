@@ -759,3 +759,79 @@ program 12:
       
       
  ![image](https://user-images.githubusercontent.com/19484531/181235454-b8178ea8-6c90-4016-8505-b83dfa5d6e0f.png)
+
+
+
+25) Pillow library
+
+                    from PIL import Image,ImageChops,ImageFilter
+                    from matplotlib import pyplot as plt
+                    x=Image.open("x.png")
+                    o=Image.open("o.png")
+                    print('size of the image:',x.size,'colour mode:',x.mode)
+                    print('size of the image:',o.size,'colour mode:',x.mode)
+                    plt.subplot(121),plt.imshow(x)
+                    plt.axis('off')
+                    plt.subplot(122),plt.imshow(o)
+                    plt.axis('off')
+                    merged=ImageChops.multiply(x,o)
+                    add=ImageChops.add(x,o)
+                    grayscale=merged.convert('L')
+                    grayscale
+                    
+                    
+                    out put:
+                    size of the image: (256, 256) colour mode: RGB
+                    size of the image: (256, 256) colour mode: RGB
+                    
+ ![image](https://user-images.githubusercontent.com/19484531/186652629-3537031c-4528-423d-bde1-94548d9db2ea.png)
+
+             image=merged
+                             print('image size:',image.size,'\ncolour mode:',image.mode,'\nImage width:',image.width,'| also represented by :',image.size[0],'\nImage                 height',image.height,'| also represented by:',image.size[1])                      
+                             
+                       
+               output:
+               image size: (256, 256) 
+                colour mode: RGB 
+                Image width: 256 | also represented by : 256 
+                Image height 256 | also represented by: 256
+                
+           pixel=grayscale.load()
+            for row in range(grayscale.size[0]):
+                for column in range(grayscale.size[1]):
+                    if pixel[row,column]!=(255):
+                        pixel[row,column]=(0)
+            grayscale
+            
+ ![image](https://user-images.githubusercontent.com/19484531/186652881-1b98ae97-ad02-49f2-b84e-bbad1449b072.png)
+ 
+ 
+             Invert=ImageChops.invert(grayscale)
+            bg=Image.new('L',(256,256),color=(255))
+            subt=ImageChops.subtract(bg,grayscale)
+            rotate=subt.rotate(45)
+            rotate
+![image](https://user-images.githubusercontent.com/19484531/186652956-12888c2d-4264-46ea-b333-35708e8189a5.png)
+
+            blur=grayscale.filter(ImageFilter.GaussianBlur(radius=1))
+            edge=blur.filter(ImageFilter.FIND_EDGES)
+            edge
+            
+ ![image](https://user-images.githubusercontent.com/19484531/186653023-0d62a735-8bd9-40fd-a45d-5fa7b4643458.png)
+ 
+ 
+             edge=edge.convert('RGB')
+            bg_red=Image.new('RGB',(256,256),color=(255,0,0))
+            filled_edge=ImageChops.darker(bg_red,edge)
+            filled_edge
+            
+  ![image](https://user-images.githubusercontent.com/19484531/186653097-f1df8986-9914-4d89-9f6e-6d67e340ec81.png)
+
+
+            edge.save('processed.png')
+            
+            
+ ![image](https://user-images.githubusercontent.com/19484531/186653388-8bdf1007-8230-4384-b0b2-bab2dcfd23c9.png)
+
+
+
