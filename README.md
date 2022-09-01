@@ -926,7 +926,23 @@ program 12:
                 # Put segments on top of original image to compare
                 segmented_image =label2rgb(segments, face_image, kind='avg')
                 #Show the segmented image
-                plot_comparison (face_image, segmented_image, 'Segmented image, 400 superpixels')\
+                plot_comparison (face_image, segmented_image, 'Segmented image, 400 superpixels')
+                
+                
+         or
+         
+         
+                    from skimage.segmentation import slic
+                    from skimage.color import label2rgb
+                    import matplotlib.pyplot as plt
+                    import numpy as np
+                    face_image = plt.imread('face.jpg')
+                    segments = slic(face_image, n_segments=400)
+                    segmented_image=label2rgb(segments,face_image,kind='avg')
+                    plt.imshow(face_image)
+                    plt.show()
+                    plt.imshow((segmented_image * 1).astype(np.uint8))
+                    plt.show()
                 
   ![image](https://user-images.githubusercontent.com/19484531/186654269-30ee002a-de75-45de-93f1-3619c5b59525.png)
   
