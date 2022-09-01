@@ -944,7 +944,7 @@ program 12:
                     plt.imshow((segmented_image * 1).astype(np.uint8))
                     plt.show()
                 
-  ![image](https://user-images.githubusercontent.com/19484531/186654269-30ee002a-de75-45de-93f1-3619c5b59525.png)
+ ![image](https://user-images.githubusercontent.com/19484531/186654269-30ee002a-de75-45de-93f1-3619c5b59525.png)
   
   
   
@@ -963,7 +963,7 @@ program 12:
                     show_image_contour(horse_image,contours)
                     
                     
-   ![image](https://user-images.githubusercontent.com/19484531/186654570-dc94ccee-e793-4fdd-a9a7-2e47cfd9fef6.png)
+ ![image](https://user-images.githubusercontent.com/19484531/186654570-dc94ccee-e793-4fdd-a9a7-2e47cfd9fef6.png)
    
    
    
@@ -982,7 +982,7 @@ program 12:
                 show_image_contour(image_dices, contours)
                 
                 
-    ![image](https://user-images.githubusercontent.com/19484531/186654643-e8735bf5-dc64-4728-91b5-89fcbd678d6f.png)
+  ![image](https://user-images.githubusercontent.com/19484531/186654643-e8735bf5-dc64-4728-91b5-89fcbd678d6f.png)
     
     
 
